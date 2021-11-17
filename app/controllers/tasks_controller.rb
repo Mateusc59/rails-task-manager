@@ -28,6 +28,12 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
+  def destroy
+    @restaurant = Task.find(params[:id])
+    @restaurant.destroy
+    redirect_to task_path(@task)
+  end
+
   private
 
   def task_params
